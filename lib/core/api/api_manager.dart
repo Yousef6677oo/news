@@ -2,8 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import '../Data/ArticlesResponseDM.dart';
-import '../Data/SearchResponseDM.dart';
+import '../Data/articlesResponseDM.dart';
 import '../Data/sourcesResponseDM.dart';
 
 class ApiManager {
@@ -21,21 +20,12 @@ class ApiManager {
     return responseDM;
   }
 
-  static Future<ArticlesResponseDM> getArticles(String sourceID) async {
+  static Future<ArticlesResponseDM> getArticles(String? sourceID) async {
     Uri url = Uri.https(
         baseUrl, "v2/everything", {"apiKey": apiKey, "sources": sourceID});
     http.Response response = await http.get(url);
     Map json = jsonDecode(response.body) as Map;
     ArticlesResponseDM responseDM = ArticlesResponseDM.fromJson(json);
-    return responseDM;
-  }
-
-  static Future<SearchResponseDM> getSearch(String query) async {
-    Uri url =
-        Uri.https(baseUrl, "v2/everything", {"apiKey": apiKey, "q": query});
-    http.Response response = await http.get(url);
-    Map json = jsonDecode(response.body) as Map;
-    SearchResponseDM responseDM = SearchResponseDM.fromJson(json);
     return responseDM;
   }
 }

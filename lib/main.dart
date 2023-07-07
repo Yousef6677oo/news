@@ -3,6 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:news/view/article/article_view.dart';
 import 'package:news/view/home/home_view.dart';
+import 'package:news/view/search/search_view.dart';
 import 'package:news/view/settings/settings_view.dart';
 import 'package:news/view/splash/splash_view.dart';
 
@@ -43,6 +44,7 @@ class _MyAppState extends State<MyApp> {
           HomeView.routeName: (_) => HomeView(),
           SettingsView.routeName: (_) => SettingsView(),
           ArticleView.routeName: (_) => ArticleView(),
+          SearchView.routeName: (_) => SearchView(),
         },
         initialRoute: SplashView.routeName,
       ),

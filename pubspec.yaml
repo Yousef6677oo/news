@@ -43,6 +43,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any
+  search_page: ^2.3.0
 
 
 dev_dependencies:

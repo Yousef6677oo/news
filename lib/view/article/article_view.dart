@@ -98,24 +98,24 @@ class _ArticleViewState extends State<ArticleView> {
                       onTap: () {
                         print(args.urlFullArticle);
                       },
-                      child:  Row(
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           TextButton(
-                            child: Text(
+                            child: const Text(
                               "View Full Article",
                               style: TextStyle(
                                   fontSize: 15, fontWeight: FontWeight.w600),
                             ),
-                            onPressed: () async{
+                            onPressed: () async {
                               //var url = Uri.parse(args.urlFullArticle);
                               var url = Uri.http(args.urlFullArticle);
-                              if(await canLaunchUrl(url)){
+                              if (await canLaunchUrl(url)) {
                                 await launchUrl(url);
                               }
                             },
                           ),
-                          Icon(Icons.arrow_right_outlined)
+                          const Icon(Icons.arrow_right_outlined)
                         ],
                       ),
                     )
@@ -128,6 +128,7 @@ class _ArticleViewState extends State<ArticleView> {
       ),
     );
   }
+
   Future<void> _launchInWebViewOrVC(Uri url) async {
     if (!await launchUrl(
       url,

@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import '../../core/Data/categoryDM.dart';
 import '../../core/components/side_menu.dart';
 import '../../core/utilities/app_color.dart';
-import '../category/category_widget.dart';
+import '../category/category_news_list.dart';
+import '../search/search_view.dart';
 import 'category_grid_view.dart';
 
 class HomeView extends StatefulWidget {
@@ -92,9 +93,14 @@ class _HomeViewState extends State<HomeView> {
             actions: isCategoryTab
                 ? []
                 : [
-                    IconButton(
-                        onPressed: () {},
-                        icon: Image.asset("assets/search_icon.png"))
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      child: IconButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, SearchView.routeName);
+                          },
+                          icon: Image.asset("assets/search_icon.png")),
+                    )
                   ],
             shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.vertical(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news/core/Data/ArticlesResponseDM.dart';
+import 'package:news/core/Data/articlesResponseDM.dart';
 import 'package:news/core/utilities/app_color.dart';
 
 import '../../core/Data/articleDM.dart';
